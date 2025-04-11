@@ -58,8 +58,10 @@ class Printer extends EventEmitter {
 			userDataDir: tmpDir
 		};
 
+		console.log(process.platform);
+
 		if (process.platform === "linux") {
-			cp(path.resolve(path.dirname(currentPath), "../docker-userdata"), tmpDir, { recursive: true });
+			//cp(path.resolve(path.dirname(currentPath), "../docker-userdata"), tmpDir, { recursive: true });
 			puppeteerOptions.ignoreDefaultArgs = ["--disable-component-update"];
 		}
 
